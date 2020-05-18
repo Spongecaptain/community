@@ -7,7 +7,7 @@ import com.jiangweijia.community.community.dto.GitHubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
+
 
 /**
  * @author Fisherman
@@ -15,6 +15,7 @@ import java.io.IOException;
  */
 
 @Component
+
 public class GithubProvider {
 
     public String getAccessToken(AccessTokenDto accessTokenDto) {
