@@ -17,4 +17,5 @@ public class IndexController {
         //如果返回字符串，默认情况下会被解析为模板的名字
         return "index";
     }
+
 }
