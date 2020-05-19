@@ -1,4 +1,4 @@
-package com.jiangweijia.community.community.model;
+package com.jiangweijia.community.model;
 
 import lombok.Data;
 

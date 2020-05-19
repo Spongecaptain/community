@@ -1,6 +1,6 @@
-package com.jiangweijia.community.community.mapper;
+package com.jiangweijia.community.mapper;
 
-import com.jiangweijia.community.community.model.User;
+import com.jiangweijia.community.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;

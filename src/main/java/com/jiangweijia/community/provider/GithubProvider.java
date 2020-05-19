@@ -1,9 +1,8 @@
-package com.jiangweijia.community.community.provider;
+package com.jiangweijia.community.provider;
 
 import com.alibaba.fastjson.JSON;
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.jiangweijia.community.community.dto.AccessTokenDto;
-import com.jiangweijia.community.community.dto.GitHubUser;
+import com.jiangweijia.community.dto.AccessTokenDto;
+import com.jiangweijia.community.dto.GitHubUser;
 import okhttp3.*;
 import org.springframework.stereotype.Component;
 

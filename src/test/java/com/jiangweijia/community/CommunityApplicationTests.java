@@ -1,4 +1,4 @@
-package com.jiangweijia.community.community;
+package com.jiangweijia.community;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

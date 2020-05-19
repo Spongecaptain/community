@@ -1,4 +1,4 @@
-package com.jiangweijia.community.community;
+package com.jiangweijia.community;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

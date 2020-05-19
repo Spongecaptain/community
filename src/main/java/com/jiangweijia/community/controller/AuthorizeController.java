@@ -1,10 +1,10 @@
-package com.jiangweijia.community.community.controller;
+package com.jiangweijia.community.controller;
 
-import com.jiangweijia.community.community.dto.AccessTokenDto;
-import com.jiangweijia.community.community.dto.GitHubUser;
-import com.jiangweijia.community.community.mapper.UserMapper;
-import com.jiangweijia.community.community.model.User;
-import com.jiangweijia.community.community.provider.GithubProvider;
+import com.jiangweijia.community.dto.AccessTokenDto;
+import com.jiangweijia.community.dto.GitHubUser;
+import com.jiangweijia.community.mapper.UserMapper;
+import com.jiangweijia.community.model.User;
+import com.jiangweijia.community.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;

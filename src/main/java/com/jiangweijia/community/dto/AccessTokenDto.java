@@ -1,4 +1,4 @@
-package com.jiangweijia.community.community.dto;
+package com.jiangweijia.community.dto;
 
 import lombok.Data;
 
