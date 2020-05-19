@@ -73,6 +73,28 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
             </plugin>
+
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>6.4.2</version>
+                <configuration>
+                    <!-- 这里配置成我们所要管理数据库的 URL：填写自己的，需要修改 -->
+                    <url>jdbc:h2:~/community</url>
+                    <!-- 数据库的用户名和密码:填写自己的，需要修改 -->
+                    <user>sa</user>
+                    <password> 123</password>
+                </configuration>
+                <dependencies>
+                    <!--这里的数据库改成我们的数据库类型以及版本：填写自己的，需要修改-->
+                    <dependency>
+                        <groupId>com.h2database</groupId>
+                        <artifactId>h2</artifactId>
+                        <version>1.4.199</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
         </plugins>
     </build>
 
