@@ -1,9 +1,15 @@
 package com.jiangweijia.community.community.controller;
 
+import com.jiangweijia.community.community.mapper.UserMapper;
+import com.jiangweijia.community.community.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author Fisherman
@@ -11,9 +17,26 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Controller
 public class IndexController {
+    @Autowired
+    UserMapper userMapper;
 
     @GetMapping("/")
-    public String index(){
+    public String index(HttpServletRequest request){
+        String token = null;
+        final Cookie[] cookies = request.getCookies();
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals("token")) {
+                token = cookie.getValue();
+                break;
+            }
+        }
+        if(null !=token){
+            User user = userMapper.findByToken(token);
+            if(null != user){
+                request.getSession().setAttribute("user",user);
+                System.out.println(user.getName());
+            }
+        }
         //如果返回字符串，默认情况下会被解析为模板的名字
         return "index";
     }
