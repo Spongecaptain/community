@@ -34,8 +34,9 @@ public class GithubProvider {
             System.out.println(token);
             return token;
         }catch (Exception e){
-            e.printStackTrace();
-            return null;
+            //因为经常出现 GitHub 无法直连的情况，所以这里通常会出现异常
+            System.out.println("https://github.com/login/oauth/access_token 连接失败");
+            return "连接失败";
         }
     }
 
@@ -52,5 +53,14 @@ public class GithubProvider {
         }catch (Exception e){
             return  null;
         }
+    }
+
+    //因为服务端没有代理，所以很经常出现连接失败的情况，这里就添加一个默认的用户，来提供连接
+    public GitHubUser getUserIfConnectFail(){
+        final GitHubUser gitHubUser = new GitHubUser();
+        gitHubUser.setAvatarUrl("https://avatars0.githubusercontent.com/u/48505670?v=4");
+        gitHubUser.setId(48505670L);
+        gitHubUser.setName("wjjiang");
+        return gitHubUser;
     }
 }

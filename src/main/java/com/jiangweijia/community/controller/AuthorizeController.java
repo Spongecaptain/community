@@ -46,8 +46,13 @@ public class AuthorizeController {
         accessTokenDto.setState(state);
 
         final String accessToken = githubProvider.getAccessToken(accessTokenDto);
+        final GitHubUser gitHubUser;
+        if (accessToken == "连接失败"){
+            gitHubUser = githubProvider.getUserIfConnectFail();
+        }else{
+            gitHubUser = githubProvider.getUser(accessToken);
+        }
 
-        final GitHubUser gitHubUser = githubProvider.getUser(accessToken);
 
         if (null != gitHubUser && gitHubUser.getId()!=null){
             final User user = new User();
